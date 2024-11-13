@@ -1,4 +1,5 @@
 import Banner from "./Movies/Banner";
+import Footer from "./Movies/Footer";
 import MoviesContainerPage from "./Movies/MoviesContainerPage";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <section className="mt-[3px]">
         <Banner />
         <MoviesContainerPage />
+        <Footer/>
       </section>
     </>
   );

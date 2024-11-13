@@ -1,0 +1,28 @@
+.genres-nav {
+  margin-left: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.genre-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.genre-button:hover {
+  background-color: #e0e0e0;
+  color: #000;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.genre-button.bg-gray-300 {
+  background-color: #d1d1d1;
+  color: #000;
+}

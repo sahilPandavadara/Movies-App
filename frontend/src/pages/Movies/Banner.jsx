@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../CSS/Banner.css";
 
 import img1 from "../../assets/img1.jpg";
@@ -17,6 +17,13 @@ const bannerImages = [
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+   useEffect(() => {
+     const interval = setInterval(() => {
+       setCurrentIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
+     }, 8000); // 1000ms = 1 seconds
+     return () => clearInterval(interval); // Cleanup on component unmount
+   }, []);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
