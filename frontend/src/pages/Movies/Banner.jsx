@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "../../CSS/Banner.css";
 
-import banner from "../../assets/banner.jpg";
 import img1 from "../../assets/img1.jpg";
 import img2 from "../../assets/img2.jpg";
 import img3 from "../../assets/img3.jpg";
 import img4 from "../../assets/img4.jpg";
+import img5 from "../../assets/img5.jpg";
 
-const bannerImages = [banner, img1, img2, img3, img4];
+const bannerImages = [
+  { image: img1, text: "The Wild Robot" },
+  { image: img2, text: "Venom: The Last Dance" },
+  { image: img3, text: "Terrifier3" },
+  { image: img4, text: "Apocalypse Z: The Beginning of the End" },
+  { image: img5, text: "Deadpool & Wolverine" },
+];
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,10 +32,10 @@ const Banner = () => {
     <div className="banner">
       <div
         className="banner-slide"
-        style={{ backgroundImage: `url(${bannerImages[currentIndex]})` }}
+        style={{ backgroundImage: `url(${bannerImages[currentIndex].image})` }}
       >
         <div className="banner-content">
-          <h1>Venom: The Last Dance</h1>
+          <h1>{bannerImages[currentIndex].text}</h1>
           <div className="banner-buttons">
             <button className="banner-button">See More</button>
             <button className="banner-button">Play</button>

@@ -40,20 +40,32 @@ const MoviesContainerPage = () => {
         ))}
       </nav>
 
-      <section className="flex flex-col justify-center items-center w-full lg:w-auto">
-        <div className="w-full lg:w-[100rem] mb-8 ">
-          <h1 className="mb-5">Choose For You</h1>
-          <SliderUtil data={randomMovies} />
+      <section className="flex flex-col items-center justify-center w-full min-h-screen">
+        <div className="w-full lg:max-w-[80rem] mb-8 flex flex-col items-center">
+          <h1 className="mb-5 text-2xl font-semibold text-center">
+            Choose For You
+          </h1>
+          <div className="w-full max-w-[70rem] px-4">
+            <SliderUtil data={randomMovies} />
+          </div>
         </div>
 
-        <div className="w-full lg:w-[100rem] mb-8">
-          <h1 className="mb-5">Top Movies</h1>
-          <SliderUtil data={topMovies} />
+        <div className="w-full lg:max-w-[80rem] mb-8 flex flex-col items-center">
+          <h1 className="mb-5 text-2xl font-semibold text-center">
+            Top Movies
+          </h1>
+          <div className="w-full max-w-[70rem] px-4">
+            <SliderUtil data={topMovies} />
+          </div>
         </div>
 
-        <div className="w-full lg:w-[100rem] mb-8">
-          <h1 className="mb-5">Choose Movie</h1>
-          <SliderUtil data={filteredMovies} />
+        <div className="w-full lg:max-w-[80rem] mb-8 flex flex-col items-center">
+          <h1 className="mb-5 text-2xl font-semibold text-center">
+            Choose Movie
+          </h1>
+          <div className="w-full max-w-[70rem] px-4">
+            <SliderUtil data={filteredMovies} />
+          </div>
         </div>
       </section>
     </div>
