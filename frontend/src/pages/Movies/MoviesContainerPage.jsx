@@ -5,6 +5,8 @@ import {
   useGetRandomMoviesQuery,
 } from "../../redux/api/movies";
 
+import "../../CSS/MoviesContainerPage.css";
+
 import { useFetchGenresQuery } from "../../redux/api/genre";
 import SliderUtil from "../../component/SliderUtil";
 
@@ -25,7 +27,7 @@ const MoviesContainerPage = () => {
   );
 
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between items-center">
+    <div className="flex flex-col lg:flex-row lg:justify-between items-center mt-8">
       <section className="flex flex-col items-center justify-center w-full min-h-screen">
         <div className="w-full lg:max-w-[80rem] mb-8 flex flex-col items-center">
           <h1 className="mb-5 text-2xl font-semibold text-center">

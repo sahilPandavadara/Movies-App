@@ -9,7 +9,11 @@
   color: #ffffff;
   z-index: 1000000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative; /* Ensure the header is positioned correctly */
+  position: fixed; /* Ensure the header is positioned correctly */
+  width: 100%;
+  top: 0; /* Position at the top */
+  left: 0;
+  height: 60px; /* Define a fixed height for the header */
 }
 
 .logo {
@@ -83,4 +87,3 @@
 .header ul li:hover {
   background-color: #f0f0f0;
 }
-

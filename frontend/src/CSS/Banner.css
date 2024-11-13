@@ -1,8 +1,10 @@
 .banner {
   position: relative;
   width: 100%;
-  height: 600px; /* Adjust the height as needed */
+  height: 660px; /* Adjust the height as needed */
   overflow: hidden;
+  margin-top: 63px; /* Add a top margin equal to the height of the header */
+  
 }
 
 .banner-slide-container {
