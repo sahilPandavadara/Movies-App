@@ -16,6 +16,7 @@ const App = () => {
     "/admin/movies/update/:id",
     "/admin/movies/dashboard",
     "/admin/movies/comments",
+    "/about",
     "/admin/movies/top",
   ].includes(location.pathname);
 

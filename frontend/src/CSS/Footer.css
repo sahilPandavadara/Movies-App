@@ -1,79 +1,85 @@
 .footer {
-    background-color: #1c1c1c;
-    color: #b0b0b0;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: #b0b0b0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .footer-logo h2 {
-    font-size: 24px;
-    color: #ffffff;
+  font-size: 24px;
+  color: #ffffff;
 }
 
 .footer-links {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 20px;
 }
 
 .footer-column h3 {
-    color: #ffffff;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #555;
-    padding-bottom: 5px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
 }
 
 .footer-column ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .footer-column li {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 .social-icons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .social-icons svg {
-    color: #b0b0b0;
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.3s;
+  color: #b0b0b0;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .social-icons svg:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .back-to-top {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .back-to-top button {
-    background-color: #1e5eff;
-    color: #ffffff;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
+  background-color: #1e5eff;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .back-to-top button:hover {
-    background-color: #3d7bff;
+  background-color: #3d7bff;
+}
+
+.logo {
+  font-size: 35px;
+  width: 200px;
+  height: 50px;
 }

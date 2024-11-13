@@ -26,6 +26,7 @@ import AllComments from "./pages/Admin/AllComments.jsx";
 import AdminDashboard from "./pages/Admin/Dashboard/AdminDashboard.jsx";
 import TopMoviesPage from "./pages/Movies/TopMovies.jsx";
 import NotFound from "./pages/User/NotFound.jsx";
+import About from "./pages/Movies/About.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,6 +49,7 @@ const router = createBrowserRouter(
         <Route path="/admin/movies/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/movies/comments" element={<AllComments />} />
         <Route path="/admin/movies/top" element={<TopMoviesPage />} />
+        <Route path="/about" element={<About />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

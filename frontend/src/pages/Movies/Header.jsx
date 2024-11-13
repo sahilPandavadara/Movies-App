@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/users";
 import { logout } from "../../redux/features/auth/authSlice";
 import "../../CSS/Header.css";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -50,7 +51,8 @@ const Header = () => {
   return (
     <header className="header" >
       <Link to="/" className="logo">
-        PlayBox
+        {/* PlayBox */}
+        <img src={logo} alt="" />
       </Link>
 
       <nav className="nav">

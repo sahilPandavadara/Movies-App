@@ -5,7 +5,7 @@ import MovieCard from "../pages/Movies/MovieCard";
 
 const SliderUtil = ({ data }) => {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,

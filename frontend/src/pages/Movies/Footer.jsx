@@ -8,6 +8,8 @@ import {
   ArrowUpward,
 } from "@mui/icons-material";
 
+import logo from "../../assets/logo.png";
+
 const Footer = () => {
   // Scroll to the top of the page
   const scrollToTop = () => {
@@ -33,22 +35,8 @@ const Footer = () => {
       {/* Logo Section */}
       <Box>
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-          <Link
-            href="/"
-            underline="none"
-            sx={{
-              color: "#FFFFFF",
-              fontSize: "32px", // Increase font size
-              padding: "10px 20px", // Add padding for size
-              backgroundColor: "#1976d2",
-              borderRadius: "8px",
-              textDecoration: "none",
-              "&:hover": {
-                backgroundColor: "#1565c0", // Darker blue on hover
-              },
-            }}
-          >
-            PlayBox
+          <Link href="/">
+            <img src={logo} alt="" style={{ width: "250px", height: "70px" }} />
           </Link>
         </Typography>
       </Box>
