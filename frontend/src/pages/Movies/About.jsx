@@ -7,6 +7,8 @@ import ragan from "../../assets/Group-member/ragan.webp";
 import nitin from "../../assets/Group-member/Nitin.jpg";
 import rishi from "../../assets/Group-member/Rishi.jpg";
 import kishan from "../../assets/Group-member/Kishan.jpg";
+import sahil from "../../assets/Group-member/Sahil.jpeg";
+import sarjil from "../../assets/Group-member/Sarjil.jpeg";
 
 function About() {
   return (
@@ -65,6 +67,8 @@ function About() {
             <TeamMember image={jyot} name="Jyot Vasava" />
             <TeamMember image={rishi} name="Rishi Godhasara" />
             <TeamMember image={ragan} name="Ragan patel" />
+            <TeamMember image={sarjil} name="Sarjil Chauhan" />
+            <TeamMember image={sahil} name="Sahil Pandavadara" />
           </div>
         </div>
 
