@@ -8,6 +8,7 @@ import img3 from "../../assets/img3.jpg";
 import img4 from "../../assets/img4.jpg";
 import img5 from "../../assets/img5.jpg";
 
+// Array of banner images with associated text and IDs for linking
 const bannerImages = [
   { image: img1, text: "The Wild Robot", id: "6734e849333089256fc61f6f" },
   {
@@ -25,52 +26,54 @@ const bannerImages = [
 ];
 
 const Banner = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [slides, setSlides] = useState([]);
-  const autoScrollRef = useRef(null);
-  const slideRef = useRef(null);
-  const isMouseOver = useRef(false);
+  const [currentIndex, setCurrentIndex] = useState(1); // Current index of the displayed slide
+  const [isTransitioning, setIsTransitioning] = useState(false); // State to manage slide transition
+  const [slides, setSlides] = useState([]); // Array of slides with prepended and appended slides for looping
+  const autoScrollInterval = useRef(null); // Reference for the auto-scroll interval
+  const slideRef = useRef(null); // Reference to the slide container
+  const lastInteractionTime = useRef(Date.now()); // Track last interaction time to reset auto-scroll
 
-  // Initialize slides with cloned elements
+  // Initialize slides with looping elements at the beginning and end
   useEffect(() => {
-    const initialSlides = [
+    setSlides([
       bannerImages[bannerImages.length - 1],
       ...bannerImages,
       bannerImages[0],
-    ];
-    setSlides(initialSlides);
+    ]);
   }, []);
 
-  // Handle auto-scrolling
+  // Start auto-scroll with a 7-second interval
+  const startAutoScroll = () => {
+    if (autoScrollInterval.current) {
+      clearInterval(autoScrollInterval.current);
+    }
+
+    autoScrollInterval.current = setInterval(() => {
+      const currentTime = Date.now();
+      if (currentTime - lastInteractionTime.current >= 7000) {
+        setIsTransitioning(true);
+        setCurrentIndex((prev) => prev + 1);
+      }
+    }, 7000);
+  };
+
+  // Start auto-scroll on mount and clean up on unmount
   useEffect(() => {
-    const startAutoScroll = () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-      }
-
-      autoScrollRef.current = setInterval(() => {
-        if (!isMouseOver.current) {
-          handleSlideChange("next");
-        }
-      }, 5000); // Reduced interval to 5 seconds for better UX
-    };
-
-    // Start auto-scroll when component mounts
     startAutoScroll();
-
-    // Cleanup interval on unmount
     return () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
+      if (autoScrollInterval.current) {
+        clearInterval(autoScrollInterval.current);
       }
     };
-  }, [currentIndex]); // Re-initialize interval when currentIndex changes
+  }, []);
 
+  // Handle slide change based on direction (next/prev)
   const handleSlideChange = (direction) => {
-    if (isTransitioning) return;
+    if (isTransitioning) return; // Prevent slide change during transition
 
+    lastInteractionTime.current = Date.now(); // Reset last interaction time
     setIsTransitioning(true);
+
     if (direction === "next") {
       setCurrentIndex((prev) => prev + 1);
     } else {
@@ -78,64 +81,58 @@ const Banner = () => {
     }
   };
 
-  const handleTransitionEnd = () => {
-    setIsTransitioning(false);
+  const handleNext = () => handleSlideChange("next"); // Navigate to the next slide
+  const handlePrev = () => handleSlideChange("prev"); // Navigate to the previous slide
 
-    // Reset to first slide
-    if (currentIndex === bannerImages.length + 1) {
-      setCurrentIndex(1);
-    }
-    // Reset to last slide
-    else if (currentIndex === 0) {
+  // Handle transition end to loop slides seamlessly
+  const handleTransitionEnd = () => {
+    if (currentIndex === 0) {
+      setIsTransitioning(false);
       setCurrentIndex(bannerImages.length);
+    } else if (currentIndex === bannerImages.length + 1) {
+      setIsTransitioning(false);
+      setCurrentIndex(1);
+    } else {
+      setIsTransitioning(false);
     }
   };
 
   return (
     <div
-      className="relative w-full overflow-hidden bg-black"
-      style={{ height: "660px", marginTop: "61px" }}
-      onMouseEnter={() => {
-        isMouseOver.current = true;
-      }}
-      onMouseLeave={() => {
-        isMouseOver.current = false;
-      }}
+      className="relative h-screen w-full overflow-hidden bg-black"
+      style={{ marginTop: "61px", height: "660px" }} // Adjusting margin and height to match the design
     >
+      {/* Slide container */}
       <div
         ref={slideRef}
-        className="relative flex h-full w-full transform"
+        className="relative flex h-full w-full"
         style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-          transition: isTransitioning ? "transform 500ms ease-in-out" : "none",
+          transform: `translateX(-${currentIndex * 100}%)`, // Translate based on the current index
+          transition: isTransitioning ? "transform 500ms ease-in-out" : "none", // Smooth transition when sliding
         }}
-        onTransitionEnd={handleTransitionEnd}
+        onTransitionEnd={handleTransitionEnd} // Handle end of transition for seamless looping
       >
         {slides.map((slide, index) => (
           <div
-            key={`slide-${index}`}
-            className="relative h-full w-full shrink-0"
+            key={index}
+            className="relative h-full w-full shrink-0 bg-cover bg-center" // Slide background styles
+            style={{
+              backgroundImage: `url(${slide.image})`,
+            }}
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-            {/* Content */}
-            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center w-full max-w-4xl px-4">
-              <h1 className="mb-6 text-4xl md:text-6xl font-bold text-white tracking-tight drop-shadow-lg">
+            {/* Gradient overlay for better text visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+            {/* Slide content */}
+            <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center">
+              <h1 className="mb-4 text-4xl md:text-6xl font-bold text-white tracking-tight">
                 {slide.text}
               </h1>
               {slide.id && (
                 <a
-                  href={`/movies/${slide.id}`}
-                  className="inline-flex items-center px-8 py-4 text-base font-medium text-black bg-white rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-gray-500/25"
+                  href={`/movies/${slide.id}`} // Link to movie details
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium text-black bg-white rounded-lg hover:bg-white/90 transition-colors duration-300"
                 >
-                  Explore Now
+                  See More
                 </a>
               )}
             </div>
@@ -143,40 +140,25 @@ const Banner = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
+      {/* Previous button */}
       <button
-        onClick={() => handleSlideChange("prev")}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white backdrop-blur-sm hover:bg-black/60 transition-all duration-300 transform hover:scale-110 z-10"
+        onClick={handlePrev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 text-white backdrop-blur-sm hover:bg-black/50 transition-colors duration-300 z-10"
         aria-label="Previous slide"
+        disabled={isTransitioning} // Disable button during slide transition
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
 
+      {/* Next button */}
       <button
-        onClick={() => handleSlideChange("next")}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white backdrop-blur-sm hover:bg-black/60 transition-all duration-300 transform hover:scale-110 z-10"
+        onClick={handleNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 text-white backdrop-blur-sm hover:bg-black/50 transition-colors duration-300 z-10"
         aria-label="Next slide"
+        disabled={isTransitioning} // Disable button during slide transition
       >
         <ChevronRight className="w-6 h-6" />
       </button>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {bannerImages.map((_, index) => (
-          <button
-            key={`indicator-${index}`}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              currentIndex === index + 1
-                ? "bg-white w-6"
-                : "bg-white/50 hover:bg-white/80"
-            }`}
-            onClick={() => {
-              setCurrentIndex(index + 1);
-              setIsTransitioning(true);
-            }}
-          />
-        ))}
-      </div>
     </div>
   );
 };
