@@ -1,5 +1,12 @@
 import React from "react";
 import { Film, Heart, Users, Code, Github, Twitter } from "lucide-react";
+import rushi from "../../assets/Group-member/Rushi.jpeg";
+import darshak from "../../assets/Group-member/Darshak.jpeg";
+import jyot from "../../assets/Group-member/Jyot.jpeg";
+import ragan from "../../assets/Group-member/ragan.webp";
+import nitin from "../../assets/Group-member/Nitin.jpg";
+import rishi from "../../assets/Group-member/Rishi.jpg";
+import kishan from "../../assets/Group-member/Kishan.jpg";
 
 function About() {
   return (
@@ -43,20 +50,21 @@ function About() {
             Meet Our Team
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
+            <TeamMember image={darshak} name="Darshak Kukadiya" />
             <TeamMember
-              image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=300&h=300"
-              name="Nitin Kanzariya"
+              image={kishan}
+              name="Kishan patel"
+              // role="Lead Developer"
             />
+            <TeamMember image={nitin} name="Nitin Kanzariya" />
             <TeamMember
-              image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300&h=300"
-              name="David Chen"
-              role="Lead Developer"
+              image={rushi}
+              name="Rushi Makadiya"
+              // role="Head of Content"
             />
-            <TeamMember
-              image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300&h=300"
-              name="Emily Rodriguez"
-              role="Head of Content"
-            />
+            <TeamMember image={jyot} name="Jyot Vasava" />
+            <TeamMember image={rishi} name="Rishi Godhasara" />
+            <TeamMember image={ragan} name="Ragan patel" />
           </div>
         </div>
 
@@ -84,7 +92,7 @@ function About() {
               <Twitter className="w-6 h-6" />
             </a>
           </div>
-          <p>© 2024 Scene. All rights reserved.</p>
+          <p>© All rights reserved.</p>
         </footer>
       </div>
     </div>

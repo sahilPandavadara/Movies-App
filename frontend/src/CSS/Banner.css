@@ -4,7 +4,6 @@
   height: 660px; /* Adjust the height as needed */
   overflow: hidden;
   margin-top: 63px; /* Add a top margin equal to the height of the header */
-  
 }
 
 .banner-slide-container {
@@ -57,6 +56,7 @@
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
 }
 
 .banner-button:first-child {
@@ -67,6 +67,11 @@
 .banner-button:last-child {
   background-color: #ffffff;
   color: black;
+}
+
+.banner-button:hover {
+  background-color: #1a1a1a; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
 }
 
 .banner-arrow {
