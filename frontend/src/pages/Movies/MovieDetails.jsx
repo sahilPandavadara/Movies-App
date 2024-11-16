@@ -216,7 +216,7 @@ const MovieDetails = () => {
             </p>
 
             {/* Watch Button */}
-            <button className="group flex items-center px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 rounded-xl hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/25">
+            <button className="group flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/25">
               <PlayCircle className="w-6 h-6 mr-3 transform group-hover:scale-110 transition-transform" />
               <span className="font-semibold text-lg">Watch Now</span>
             </button>

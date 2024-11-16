@@ -225,7 +225,7 @@ const CreateMovie = () => {
         <button
           type="button"
           onClick={handleCreateMovie}
-          className="bg-teal-500 text-white px-4 py-2 rounded"
+          className="bg-blue-600 text-white px-4 py-2 rounded"
           disabled={isCreatingMovie || isUploadingImage}
         >
           {isCreatingMovie || isUploadingImage ? "Creating..." : "Create Movie"}

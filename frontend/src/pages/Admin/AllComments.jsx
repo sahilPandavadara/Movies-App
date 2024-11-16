@@ -41,7 +41,7 @@ const AllComments = () => {
               <p className="my-4">{review.comment}</p>
 
               <button
-                className="text-red-500"
+                className="text-blue-600"
                 onClick={() => handleDeleteComment(m._id, review._id)}
               >
                 Delete

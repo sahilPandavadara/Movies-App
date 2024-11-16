@@ -27,7 +27,7 @@ const MoviesContainerPage = () => {
       <section className="flex flex-col items-center justify-center w-full py-12">
         {/* Choose For You Section */}
         <div className="w-full lg:max-w-[80rem] mb-16 flex flex-col items-center px-4">
-          <h1 className="mb-8 text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="mb-8 text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             Choose For You
           </h1>
           <div className="w-full max-w-[80rem] bg-gray-800/50 rounded-xl p-6 shadow-lg backdrop-blur-sm">
@@ -37,7 +37,7 @@ const MoviesContainerPage = () => {
 
         {/* Top Movies Section */}
         <div className="w-full lg:max-w-[80rem] mb-16 flex flex-col items-center px-4">
-          <h1 className="mb-8 text-3xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          <h1 className="mb-8 text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">
             Top Movies
           </h1>
           <div className="w-full max-w-[80rem] bg-gray-800/50 rounded-xl p-6 shadow-lg backdrop-blur-sm">
@@ -48,7 +48,7 @@ const MoviesContainerPage = () => {
         {/* Choose Movie Section */}
         <div className="w-full lg:max-w-[80rem] mb-8 flex flex-col items-center px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between w-full mb-8">
-            <h1 className="text-3xl font-bold text-center lg:text-left mb-6 lg:mb-0 bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold text-center lg:text-left mb-6 lg:mb-0 bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">
               Choose Movie
             </h1>
             <nav className="flex flex-wrap justify-center lg:justify-start gap-3">

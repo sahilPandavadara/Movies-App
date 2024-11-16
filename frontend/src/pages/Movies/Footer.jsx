@@ -143,7 +143,7 @@ const Footer = () => {
                   backgroundColor: "rgba(96, 165, 250, 0.2)",
                   transform: "translateY(-3px)",
                   "& svg": {
-                    color: "#60a5fa",
+                    color: "#1155F3",
                   },
                 },
                 "&:active": {
@@ -164,10 +164,10 @@ const Footer = () => {
           position: "fixed",
           bottom: 30,
           right: 30,
-          backgroundColor: "rgba(96, 165, 250, 0.1)",
+          backgroundColor: "#1155F3",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(96, 165, 250, 0.2)",
-          color: "#60a5fa",
+          color: "#1155F3",
           transition: "all 0.3s ease",
           "&:hover": {
             backgroundColor: "rgba(96, 165, 250, 0.2)",
