@@ -49,7 +49,7 @@ const Header = () => {
   }, [dropdownOpen]);
 
   return (
-    <header className="header" >
+    <header className="header">
       <Link to="/" className="logo">
         {/* PlayBox */}
         <img src={logo} alt="" />
@@ -93,6 +93,7 @@ const Header = () => {
                     <Link
                       to="/admin/movies/dashboard"
                       className="block px-4 py-2 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)} // Close dropdown on click
                     >
                       Dashboard
                     </Link>
@@ -102,13 +103,17 @@ const Header = () => {
                   <Link
                     to="/profile"
                     className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setDropdownOpen(false)} // Close dropdown on click
                   >
                     Profile
                   </Link>
                 </li>
                 <li>
                   <button
-                    onClick={logoutHandler}
+                    onClick={() => {
+                      logoutHandler(); // Logout action
+                      setDropdownOpen(false); // Close dropdown
+                    }}
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100"
                   >
                     Logout

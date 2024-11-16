@@ -229,7 +229,7 @@ const CreateMovie = () => {
           disabled={isCreatingMovie || isUploadingImage}
         >
           {isCreatingMovie || isUploadingImage ? "Creating..." : "Create Movie"}
-        </button>
+        </button>1
       </form>
     </div>
   );

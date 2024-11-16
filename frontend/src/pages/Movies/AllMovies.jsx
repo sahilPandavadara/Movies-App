@@ -7,6 +7,7 @@ import {
 } from "../../redux/api/movies";
 import MovieCard from "./MovieCard";
 import { useEffect } from "react";
+import { Search } from 'lucide-react';
 import { useSelector, useDispatch } from "react-redux";
 import banner from "../../assets/banner3.jpg";
 import {
@@ -77,31 +78,39 @@ const AllMovies = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 -translate-y-[5rem]">
       <>
-        <section>
+      <section>
           <div
             className="relative h-[50rem] w-screen mb-10 flex items-center justify-center bg-cover"
             style={{ backgroundImage: `url(${banner})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black opacity-60"></div>
 
-            <div className="relative z-10 text-center text-white mt-[10rem]">
-              <h1 className="text-8xl font-bold mb-4">Play Box</h1>
-              <p className="text-2xl">
-                Cinematic Odyssey: Unveiling the Magic of Movies
-              </p>
-            </div>
+            <div className="relative pt-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-7xl md:text-9xl font-bold text-white mb-6 tracking-tight">
+              Play<span className="text-blue-500">Box</span>
+            </h1>
+            <p className="text-xl font-bold md:text-2xl text-gray-300 max-w-2xl mx-auto">
+              Cinematic Odyssey: Unveiling the Magic of Movies
+            </p>
+          </div>
+            </div>  
 
             <section className="absolute -bottom-[5rem]">
+            <div className="relative">
+              <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
               <input
                 type="text"
-                className="w-[100%] h-[3rem] border px-10 outline-none rounded"
-                placeholder="Search Movie"
+                className="w-full h-12 pl-12 pr-4 rounded-full bg-white border border-gray-700 text-gray placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                placeholder="Search for movies..."
                 value={moviesFilter.searchTerm}
                 onChange={handleSearchChange}
               />
+            </div>
+
               <section className="sorts-container mt-[2rem] ml-[10rem]  w-[30rem]">
                 <select
-                  className="border p-2 rounded text-black"
+                  className="border p-2 rounded-lg text-black"
                   value={moviesFilter.selectedGenre}
                   onChange={(e) => handleGenreClick(e.target.value)}
                 >
@@ -114,7 +123,7 @@ const AllMovies = () => {
                 </select>
 
                 <select
-                  className="border p-2 rounded ml-4 text-black"
+                  className="border p-2 rounded-lg ml-4 text-black"
                   value={moviesFilter.selectedYear}
                   onChange={(e) => handleYearChange(e.target.value)}
                 >
@@ -127,7 +136,7 @@ const AllMovies = () => {
                 </select>
 
                 <select
-                  className="border p-2 rounded ml-4 text-black"
+                  className="border p-2 rounded-lg ml-4 text-black"
                   value={moviesFilter.selectedSort}
                   onChange={(e) => handleSortChange(e.target.value)}
                 >
