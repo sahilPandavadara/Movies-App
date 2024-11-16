@@ -167,7 +167,7 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to={redirect ? `/login?redirect=${redirect}` : "/login"}
-              className="text-teal-500 hover:underline"
+              className="text-blue-600 hover:underline"
             >
               Login
             </Link>
