@@ -87,10 +87,10 @@ const AllMovies = () => {
 
             <div className="relative pt-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+            <h1 className="text-7xl md:text-9xl font-bold text-white mb-6 tracking-tight">
               Play<span className="text-blue-500">Box</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl font-bold md:text-2xl text-gray-300 max-w-2xl mx-auto">
               Cinematic Odyssey: Unveiling the Magic of Movies
             </p>
           </div>
