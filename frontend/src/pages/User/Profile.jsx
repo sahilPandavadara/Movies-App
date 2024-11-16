@@ -87,13 +87,13 @@ const Profile = () => {
               type="text"
               placeholder="Enter name"
               className={`form-input p-4 rounded-sm w-full ${
-                errors.username ? "border-red-500" : ""
+                errors.username ? "border-blue-500" : ""
               }`}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
             {errors.username && (
-              <p className="text-red-500 text-sm mt-1">{errors.username}</p>
+              <p className="text-blue-500 text-sm mt-1">{errors.username}</p>
             )}
           </div>
           <div className="mb-4">
@@ -104,13 +104,13 @@ const Profile = () => {
               type="email"
               placeholder="Enter email"
               className={`form-input p-4 rounded-sm w-full ${
-                errors.email ? "border-red-500" : ""
+                errors.email ? "border-blue-500" : ""
               }`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              <p className="text-blue-500 text-sm mt-1">{errors.email}</p>
             )}
           </div>
           <div className="mb-4">
@@ -119,13 +119,13 @@ const Profile = () => {
               type="password"
               placeholder="Enter password"
               className={`form-input p-4 rounded-sm w-full ${
-                errors.password ? "border-red-500" : ""
+                errors.password ? "border-blue-500" : ""
               }`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             {errors.password && (
-              <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+              <p className="text-blue-500 text-sm mt-1">{errors.password}</p>
             )}
           </div>
           <div className="mb-6">
@@ -136,20 +136,20 @@ const Profile = () => {
               type="password"
               placeholder="Confirm Password"
               className={`form-input p-4 rounded-sm w-full ${
-                errors.confirmPassword ? "border-red-500" : ""
+                errors.confirmPassword ? "border-blue-500" : ""
               }`}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
             {errors.confirmPassword && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="text-blue-500 text-sm mt-1">
                 {errors.confirmPassword}
               </p>
             )}
           </div>
           <button
             type="submit"
-            className="bg-teal-500 w-full font-bold text-white py-3 px-4 rounded hover:bg-teal-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-blue-500 w-full font-bold text-white py-3 px-4 rounded hover:bg-blue-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={loadingUpdateProfile}
           >
             {loadingUpdateProfile ? <Loader /> : "Update"}
